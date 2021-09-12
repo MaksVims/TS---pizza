@@ -10,9 +10,161 @@
 <body>
 <div class="site-container">
   <div class="wrapper">
-    @include('./html/header-clean.html')
+    <header class="header">
+  <div class="header__container container">
+    <div class="logo">
+      <div class="logo__img">
+        <img src="../img/logo-img.png" alt="logo">
+      </div>
+      <div class="logo__content">
+        <h1 class="logo__title">React Pizza</h1>
+        <p class="logo__text">самая вкусная пицца во вселенной</p>
+      </div>
+    </div>
+  </div>
+</header>
+
     <main class="main">
-      @include('./html/cart.html')
+      <section class="cart">
+  <div class="cart__container container">
+    <div class="cart__top">
+      <h2 class="cart__title title">
+        <svg>
+          <use href="./img/sprite.svg#cart-big"></use>
+        </svg>
+        Корзина
+      </h2>
+      <button class="cart__btn-clear">
+        <svg>
+          <use href="./img/sprite.svg#trash"></use>
+        </svg>
+        Очистить корзину
+      </button>
+    </div>
+    <div class="cart__content">
+      <ul class="cart__list">
+        <li class="cart__item">
+          <article class="cart__product cart-product">
+            <div class="cart-product__left">
+              <img class="cart-product__img" src="./img/pizza/pizza-2.png" alt="pizza-small">
+              <div class="cart-product__content">
+                <h3 class="cart-product__title">Сырный цыпленок</h3>
+                <p class="cart-product__text">тонкое тесто, 26см</p>
+              </div>
+            </div>
+            <div class="cart-product__wrapper">
+              <div class="cart-product__buttons">
+                <button class="btn-circle btn-circle--light cart-product__btn cart-product__btn--count">
+                  <svg>
+                    <use href="./img/sprite.svg#minus"></use>
+                  </svg>
+                  <span class="visually-hidden">Убрать 1</span>
+                </button>
+                <span class="cart-product__count">2</span>
+                <button class="btn-circle btn-circle--light cart-product__btn cart-product__btn--count">
+                  <svg>
+                    <use href="./img/sprite.svg#plus"></use>
+                  </svg>
+                  <span class="visually-hidden">Добавить 1</span>
+                </button>
+              </div>
+              <span class="cart-product__cost">770 ₽ </span>
+              <button class="btn-circle btn-circle--grey cart-product__btn cart-product__btn--delete">
+                <svg>
+                  <use href="./img/sprite.svg#cross"></use>
+                </svg>
+                <span class="visually-hidden">Удалить текущий пункт</span>
+              </button>
+            </div>
+          </article>
+        </li>
+        <li class="cart__item">
+          <article class="cart__product cart-product">
+            <div class="cart-product__left">
+              <img class="cart-product__img" src="./img/pizza/pizza-3.png" alt="pizza-small">
+              <div class="cart-product__content">
+                <h3 class="cart-product__title">Креветки по-азиатски</h3>
+                <p class="cart-product__text">толстое тесто, 40 см.</p>
+              </div>
+            </div>
+            <div class="cart-product__wrapper">
+              <div class="cart-product__buttons">
+                <button class="btn-circle btn-circle--light cart-product__btn cart-product__btn--count">
+                  <svg>
+                    <use href="./img/sprite.svg#minus"></use>
+                  </svg>
+                  <span class="visually-hidden">Убрать 1</span>
+                </button>
+                <span class="cart-product__count">1</span>
+                <button class="btn-circle btn-circle--light cart-product__btn cart-product__btn--count">
+                  <svg>
+                    <use href="./img/sprite.svg#plus"></use>
+                  </svg>
+                  <span class="visually-hidden">Добавить 1</span>
+                </button>
+              </div>
+              <span class="cart-product__cost">290 ₽ </span>
+              <button class="btn-circle btn-circle--grey cart-product__btn cart-product__btn--delete">
+                <svg>
+                  <use href="./img/sprite.svg#cross"></use>
+                </svg>
+                <span class="visually-hidden">Удалить текущий пункт</span>
+              </button>
+            </div>
+          </article>
+        </li>
+        <li class="cart__item">
+          <article class="cart__product cart-product">
+            <div class="cart-product__left">
+              <img class="cart-product__img" src="./img/pizza/pizza-1.png" alt="pizza-small">
+              <div class="cart-product__content">
+                <h3 class="cart-product__title">Чизбургер-пицца</h3>
+                <p class="cart-product__text">тонкое тесто, 30см</p>
+              </div>
+            </div>
+            <div class="cart-product__wrapper">
+              <div class="cart-product__buttons">
+                <button class="btn-circle btn-circle--light cart-product__btn cart-product__btn--count">
+                  <svg>
+                    <use href="./img/sprite.svg#minus"></use>
+                  </svg>
+                  <span class="visually-hidden">Убрать 1</span>
+                </button>
+                <span class="cart-product__count">3</span>
+                <button class="btn-circle btn-circle--light cart-product__btn cart-product__btn--count">
+                  <svg>
+                    <use href="./img/sprite.svg#plus"></use>
+                  </svg>
+                  <span class="visually-hidden">Добавить 1</span>
+                </button>
+              </div>
+              <span class="cart-product__cost">350 ₽ </span>
+              <button class="btn-circle btn-circle--grey cart-product__btn cart-product__btn--delete">
+                <svg>
+                  <use href="./img/sprite.svg#cross"></use>
+                </svg>
+                <span class="visually-hidden">Удалить текущий пункт</span>
+              </button>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <div class="cart__total">
+        <span class="cart__count">Всего пицц: <strong>3 шт.</strong></span>
+        <span class="cart__total-price">Сумма заказа: <strong>900 ₽</strong></span>
+      </div>
+    </div>
+    <div class="cart__bottom">
+      <a href="#" class="btn btn--grey cart__btn-back">
+        <svg class="">
+          <use href="./img/sprite.svg#arrow-left"></use>
+        </svg>
+        Вернуться назад
+      </a>
+      <button class="btn btn--accent">Оплатить сейчас</button>
+    </div>
+  </div>
+</section>
     </main>
   </div>
 </div>
