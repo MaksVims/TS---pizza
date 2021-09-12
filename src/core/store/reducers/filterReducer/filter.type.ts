@@ -12,8 +12,8 @@ export interface IFilterCategory {
 export interface FilterState {
   sortCategories: ISortCategory[],
   filtersCategories: IFilterCategory[]
-  currentSort: string,
-  currentFilter: string
+  currentSort: ISortCategory,
+  currentFilter: string,
 }
 
 export enum FilterTypeActions {
@@ -23,7 +23,7 @@ export enum FilterTypeActions {
 
 interface setSortCategoryAction {
   type: FilterTypeActions.SET_SORT_CATEGORY,
-  payload: string
+  payload: ISortCategory
 }
 
 interface setFilterCategoryAction {

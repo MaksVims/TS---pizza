@@ -1,10 +1,30 @@
 import React, {FC} from 'react';
+import {ISortCategory} from "../../core/store/reducers/filterReducer/filter.type";
+import List from '../common/List';
+import SortCategoryItem from "./SortCategoryItem";
 
-const SortPopup: FC = () => {
+interface SortPopupProps {
+  items: ISortCategory[],
+  currentSort: ISortCategory,
+  onClick: (item: ISortCategory) => void
+  isOpen: boolean
+}
+
+const SortPopup: FC<SortPopupProps> = ({items, currentSort, isOpen, onClick}) => {
+
   return (
-    <ul className="options__sort-list">
-
-    </ul>
+    <List
+      classes={`options__sort-list ${isOpen && "sort-list--active"} `}
+      items={items}
+      renderItem={(item) => (
+        <SortCategoryItem
+          onClick={onClick}
+          item={item}
+          currentSort={currentSort}
+          key={item.value}
+        />
+      )}
+    />
   );
 };
 

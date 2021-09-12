@@ -6,6 +6,8 @@ const ProductPage: FC = () => {
     <section className="products">
       <div className="products__container container">
         <Filters/>
+        <h2 className="products__title title">Все пиццы</h2>
+
       </div>
     </section>
   );
