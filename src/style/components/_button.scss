@@ -6,7 +6,7 @@
   line-height: 20px;
   min-width: 80px;
   transition: background-color .3s, color .3s, border .3s;
-
+  text-transform: capitalize;
 
   &--black {
     color: var(--white-color);
@@ -39,8 +39,8 @@
   }
 
   &--grey {
-    border: 1px solid var(--light-grey-color);
-    color: var(--light-grey-color);
+    background: var(--semi-light-color);
+    color: var(--dark-color);
   }
 
   &--dark-active {
