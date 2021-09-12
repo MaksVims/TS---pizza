@@ -13,7 +13,7 @@ const initialState: FilterState = {
     {name: 'острые', value: 'острые'},
     {name: 'закрытые', value: 'закрытые'},
   ],
-  currentSort: 'rating',
+  currentSort: {name: 'популярности', value: 'rating'},
   currentFilter: ''
 }
 
