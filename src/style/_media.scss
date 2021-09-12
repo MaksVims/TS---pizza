@@ -1,0 +1,162 @@
+@media (max-width: 1401px) {
+  .site-container {
+    padding: 30px;
+  }
+
+  .header, .products {
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+@media (max-width: 1201px) {
+  .products {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 993px) {
+  .products {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 25px;
+    }
+
+    .options {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .options__filters-list {
+      margin-right: 0;
+    }
+
+    .options__sort {
+      align-self: flex-end;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+
+  .cart {
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .product {
+    &__img {
+      max-width: 160px;
+      max-height: 160px;
+    }
+
+    &__cost {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 577px) {
+  .site-container {
+    padding: 15px;
+  }
+
+  .header {
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &-cart {
+      align-self: flex-end;
+    }
+
+    .logo {
+      margin-bottom: 20px;
+    }
+  }
+
+  .product {
+    &__img {
+      max-width: 260px;
+      max-height: 260px;
+    }
+  }
+
+  .products {
+    &__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .cart {
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    &__count, &__total-price {
+      margin-bottom: 10px;
+    }
+  }
+
+  .cart-product {
+    display: block;
+
+    &__left {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    &__wrapper {
+      align-self: center;
+      margin: 0 auto;
+      justify-content: space-evenly;
+    }
+
+    &__cost {
+      order: -1;
+    }
+  }
+
+  .cart-empty {
+    .container {
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+
+    &__title {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .cart {
+    &__bottom {
+      flex-direction: column;
+    }
+  }
+
+  .cart__bottom .btn {
+    width: 190px;
+  }
+
+  .cart__btn-back {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .cart__top {
+    flex-direction: column;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+}

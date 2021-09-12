@@ -1,0 +1,33 @@
+.cart-empty {
+
+  &__container {
+    max-width: 610px;
+    padding: 8.8% 30px;
+    text-align: center;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    img {
+      margin-left: 10px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: var(--grey-color);
+    margin-bottom: 50px;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 70px;
+  }
+}

@@ -1,0 +1,13 @@
+@mixin font-face($name, $path, $weight: 400) {
+  @font-face {
+    font-family: $name;
+    src: url('#{$path}.woff2'), url('#{$path}.woff');
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@include font-face('Proxima Nova', '../fonts/proxima-nova-bold', 700)
+@include font-face('Proxima Nova', '../fonts/proxima-nova-extrabold', 800)
+@include font-face('Proxima Nova', '../fonts/proxima-nova-regular', 400)

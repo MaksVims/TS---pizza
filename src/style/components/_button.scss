@@ -1,0 +1,68 @@
+.btn {
+  border-radius: 30px;
+  max-height: 45px;
+  white-space: nowrap;
+  padding: 15px 19px;
+  line-height: 20px;
+  min-width: 80px;
+  transition: background-color .3s, color .3s, border .3s;
+
+
+  &--black {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+  }
+
+  &--light {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--white-color);
+    }
+  }
+
+  &--accent {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+  }
+
+  &--dark {
+    background-color: var(--semi-light-color);
+
+    &:hover {
+      color: var(--white-color);
+      background-color: var(--dark-color);
+      transition: background-color .3s, color .3s;
+    }
+  }
+
+  &--grey {
+    border: 1px solid var(--light-grey-color);
+    color: var(--light-grey-color);
+  }
+
+  &--dark-active {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    pointer-events: none;
+  }
+}
+
+.btn-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--light {
+    border: 1px solid var(--accent-color);
+  }
+
+  &--grey {
+    border: 1px solid var(--light-grey-color);
+  }
+}

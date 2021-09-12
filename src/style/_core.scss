@@ -1,0 +1,47 @@
+.site-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffdf8c;
+  padding: 45px;
+}
+
+.wrapper {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.03);
+  min-height: 90vh;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.main {
+  flex: 1 0 auto
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  max-width: 1345px;
+  padding: 0 50px 0 70px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 39px;
+  font-weight: 700;
+}

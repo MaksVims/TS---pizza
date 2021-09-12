@@ -1,0 +1,36 @@
+.customization {
+  &__list {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__item {
+    text-transform: lowercase;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    flex-grow: 1;
+    max-width: 50%;
+    cursor: pointer;
+    padding: 10px 0;
+    border-radius: 5px;
+
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    &--current {
+      background-color: var(--white-color);
+      pointer-events: none;
+    }
+
+    &--disable {
+      pointer-events: none;
+      opacity: .2;
+    }
+  }
+}

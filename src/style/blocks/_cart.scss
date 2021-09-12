@@ -1,0 +1,152 @@
+.cart {
+  padding-top: 5%;
+  padding-bottom: 7%;
+
+  &__container {
+    max-width: 881px;
+    padding: 0 30px;
+  }
+
+  &__title {
+    svg {
+      width: 29px;
+      height: 29px;
+      fill: var(--dark-color);
+      margin-right: 5px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__btn-clear {
+    color: var(--light-grey-color);
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    padding: 5px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--light-grey-color);
+      margin-right: 10px;
+    }
+  }
+
+  &__btn-back {
+    svg {
+      width: 6px;
+      height: 12px;
+      margin-right: 10px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    border-top: 1px solid var(--light-grey-color);
+    padding-top: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-weight: 400;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__total-price {
+    strong {
+      color: var(--accent-color);
+    }
+  }
+
+  &__content {
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 40px;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    width: 50%;
+  }
+
+  &__wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 3px;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--grey-color);
+  }
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__count {
+    margin: 0 12px;
+  }
+
+  &__btn--count {
+    padding: 10px;
+
+    svg {
+      fill: var(--accent-color);
+    }
+  }
+
+  &__btn--delete {
+    svg {
+      fill: var(--light-grey-color);
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

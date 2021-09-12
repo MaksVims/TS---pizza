@@ -1,0 +1,44 @@
+.header {
+  position: relative;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &:after {
+    content: '';
+    width: 95%;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    background-color: var(--semi-dark-color);
+  }
+}
+
+.header-cart {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+
+  &__total {
+    margin-right: 26px;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+  }
+
+  &__svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--white-color);
+    margin-right: 9px;
+  }
+}
