@@ -13,7 +13,9 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
+    flex: 1 1 50%;
     flex-grow: 1;
+    flex-basis: 50%;
     max-width: 50%;
     cursor: pointer;
     padding: 10px 0;

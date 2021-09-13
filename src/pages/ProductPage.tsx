@@ -1,13 +1,37 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import Filters from "../components/Filters/Filters";
+import List from "../components/common/List";
+import {useTypedSelector} from "../core/hooks/useTypedSelector";
+import ProductPizzaItem from "../components/ProductPizzaItem";
+import {useActions} from "../core/hooks/useActions";
+import {filterPizzaByCategory, sortPizzaByFilter} from "../core/utils/sortFunction";
 
 const ProductPage: FC = () => {
+  const {pizzas, filteredPizzas} = useTypedSelector(state => state.pizza)
+  const {currentSort, currentFilter} = useTypedSelector(state => state.filter)
+  const {setFilteredPizzas, fetchPizzas} = useActions()
+
+  useEffect(() => {
+    fetchPizzas()
+  }, [])
+
+  useEffect(() => {
+    const filteredPizzasByCategory = filterPizzaByCategory(pizzas, currentFilter)
+    setFilteredPizzas(sortPizzaByFilter(filteredPizzasByCategory, currentSort.value))
+  }, [currentSort, currentFilter, pizzas])
+
   return (
     <section className="products">
       <div className="products__container container">
         <Filters/>
         <h2 className="products__title title">Все пиццы</h2>
-
+        <List
+          items={filteredPizzas}
+          classes="products__grid"
+          renderItem={(item) => (
+          <ProductPizzaItem pizza={item} key={item.id}/>
+        )}
+        />
       </div>
     </section>
   );
