@@ -7,6 +7,9 @@
   min-width: 80px;
   transition: background-color .3s, color .3s, border .3s;
   text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &--black {
     color: var(--white-color);

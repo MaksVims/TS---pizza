@@ -1,6 +1,5 @@
 import {Dispatch} from "redux";
-import {ICartPizza} from "../reducers/cartReducer/cart.type";
-import {CartAction, CartTypeActions} from "../reducers/cartReducer/cartReducer";
+import {CartAction, CartTypeActions, ICartPizza} from "../reducers/cartReducer/cart.type";
 import {getTotalPrice} from "../../utils/cartHelpers";
 
 export function addItemToCart(item: ICartPizza) {
