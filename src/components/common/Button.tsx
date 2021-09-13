@@ -31,6 +31,8 @@ const Button: FC<ButtonProps> = (
   const btnClasses = classnames({
     'btn': type === btnType.default,
     'btn-circle': type === btnType.circle,
+    'btn-circle--light': type === btnType.circle && color === btnColors.light,
+    'btn-circle--grey': type === btnType.circle && color === btnColors.grey,
     'btn--black': color === btnColors.black,
     'btn--light': color === btnColors.light,
     'btn--accent': color === btnColors.accent,
