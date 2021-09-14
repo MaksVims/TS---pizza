@@ -5,9 +5,11 @@ import {useTypedSelector} from "../core/hooks/useTypedSelector";
 import ProductPizzaItem from "../components/ProductPizzaItem";
 import {useActions} from "../core/hooks/useActions";
 import {filterPizzaByCategory, sortPizzaByFilter} from "../core/utils/sortFunction";
+import PizzaLoader from "../components/PizzaLoader";
+import {getArray} from '../core/utils/productHelper';
 
 const ProductPage: FC = () => {
-  const {pizzas, filteredPizzas} = useTypedSelector(state => state.pizza)
+  const {pizzas, filteredPizzas, loading} = useTypedSelector(state => state.pizza)
   const {currentSort, currentFilter} = useTypedSelector(state => state.filter)
   const {setFilteredPizzas, fetchPizzas} = useActions()
 
@@ -25,13 +27,20 @@ const ProductPage: FC = () => {
       <div className="products__container container">
         <Filters/>
         <h2 className="products__title title">Все пиццы</h2>
-        <List
-          items={filteredPizzas}
-          classes="products__grid"
-          renderItem={(item) => (
-          <ProductPizzaItem pizza={item} key={item.id}/>
-        )}
-        />
+        {loading ?
+          <List items={getArray(8)} renderItem={() => (
+            <PizzaLoader/>
+          )}/>
+          :
+          <List
+            items={filteredPizzas}
+            classes="products__grid"
+            renderItem={(item) => (
+              <ProductPizzaItem pizza={item} key={item.id}/>
+            )}
+          />
+        }
+
       </div>
     </section>
   );

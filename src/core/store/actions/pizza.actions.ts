@@ -1,6 +1,6 @@
 import {IPizza, PizzasAction, PizzaTypeActions} from "../reducers/pizzaReducer/pizza.type";
 import {PizzaService} from "../../services/pizzaService";
-import { Dispatch } from "redux";
+import {Dispatch} from "redux";
 
 
 export function setFilteredPizzas(filteredPizzas: IPizza[]): PizzasAction {
