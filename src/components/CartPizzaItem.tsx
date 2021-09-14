@@ -5,12 +5,20 @@ import {ReactSVG} from "react-svg";
 import decrementSVG from '../assets/img/svg/minus.svg'
 import incrementSVG from '../assets/img/svg/plus.svg'
 import crossSVG from '../assets/img/svg/cross.svg'
+import {useActions} from "../core/hooks/useActions";
 
 interface CartPizzaItemProps {
-  pizza: ICartPizza
+  pizza: ICartPizza,
+  count: number
 }
 
-const CartPizzaItem: FC<CartPizzaItemProps> = ({pizza}) => {
+const CartPizzaItem: FC<CartPizzaItemProps> = ({pizza, count}) => {
+  const {addItemToCart, awayOneItemFromCart, removeItemFromCart} = useActions()
+
+  const addPizza = () => addItemToCart(pizza)
+  const awayPizza = () => awayOneItemFromCart(pizza)
+  const removePizza = () => removeItemFromCart(pizza)
+
   return (
     <li className="cart__item">
       <article className="cart__product cart-product">
@@ -23,18 +31,18 @@ const CartPizzaItem: FC<CartPizzaItemProps> = ({pizza}) => {
         </div>
         <div className="cart-product__wrapper">
           <div className="cart-product__buttons">
-            <Button color={btnColors.light} type={btnType.circle} classes='cart-product__btn cart-product__btn--count'>
+            <Button color={btnColors.light} type={btnType.circle} classes='cart-product__btn cart-product__btn--count' onClick={awayPizza}>
               <ReactSVG src={decrementSVG} />
               <span className="visually-hidden">Убрать 1</span>
             </Button>
-            <span className="cart-product__count">2</span>
-            <Button color={btnColors.light} type={btnType.circle} classes='cart-product__btn cart-product__btn--count'>
+            <span className="cart-product__count">{count}</span>
+            <Button onClick={addPizza} color={btnColors.light} type={btnType.circle} classes='cart-product__btn cart-product__btn--count'>
               <ReactSVG src={incrementSVG} />
               <span className="visually-hidden">Добавить 1</span>
             </Button>
           </div>
-          <span className="cart-product__cost">{pizza.price} ₽ </span>
-          <Button color={btnColors.grey} type={btnType.circle} classes='cart-product__btn cart-product__btn--delete'>
+          <span className="cart-product__cost">{pizza.price * count} ₽ </span>
+          <Button color={btnColors.grey} type={btnType.circle} classes='cart-product__btn cart-product__btn--delete' onClick={removePizza}>
             <ReactSVG src={crossSVG} />
             <span className="visually-hidden">Удалить текущий пункт</span>
           </Button>
