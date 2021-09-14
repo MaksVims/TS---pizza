@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import AppRouter from "../AppRouter";
-import Navbar from "./Navbar";
 import {useTypedSelector} from "../core/hooks/useTypedSelector";
 import {useActions} from "../core/hooks/useActions";
 
@@ -16,7 +15,6 @@ function App() {
     <div className="site-container">
       <div className="wrapper">
         <main className="main">
-          <Navbar/>
           <AppRouter/>
         </main>
       </div>

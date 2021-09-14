@@ -71,9 +71,9 @@ const ProductPizzaItem: FC<ProductPizzaItemProps> = ({pizza}) => {
         </div>
         <div className="product__bottom">
           <span className="product__cost">от {pizza.price} ₽</span>
-          <Button color={btnColors.light} classes={"product__btn"}>
+          <Button color={btnColors.light} classes={"product__btn"} onClick={addItem}>
             <ReactSVG src={PlusIcon} className='product__btn-svg'/>
-            <span onClick={addItem}>добавить</span>
+            <span>добавить</span>
           </Button>
         </div>
       </article>

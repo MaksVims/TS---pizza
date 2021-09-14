@@ -7,6 +7,7 @@ import {useActions} from "../core/hooks/useActions";
 import {filterPizzaByCategory, sortPizzaByFilter} from "../core/utils/sortFunction";
 import PizzaLoader from "../components/PizzaLoader";
 import {getArray} from '../core/utils/productHelper';
+import Navbar from "../components/Navbar";
 
 const ProductPage: FC = () => {
   const {pizzas, filteredPizzas, loading} = useTypedSelector(state => state.pizza)
@@ -23,26 +24,28 @@ const ProductPage: FC = () => {
   }, [currentSort, currentFilter, pizzas])
 
   return (
-    <section className="products">
-      <div className="products__container container">
-        <Filters/>
-        <h2 className="products__title title">Все пиццы</h2>
-        {loading ?
-          <List items={getArray(8)} renderItem={() => (
-            <PizzaLoader/>
-          )}/>
-          :
-          <List
-            items={filteredPizzas}
-            classes="products__grid"
-            renderItem={(item) => (
-              <ProductPizzaItem pizza={item} key={item.id}/>
-            )}
-          />
-        }
-
-      </div>
-    </section>
+    <>
+      <Navbar/>
+      <section className="products">
+        <div className="products__container container">
+          <Filters/>
+          <h2 className="products__title title">Все пиццы</h2>
+          {loading ?
+            <List items={getArray(8)} renderItem={() => (
+              <PizzaLoader/>
+            )}/>
+            :
+            <List
+              items={filteredPizzas}
+              classes="products__grid"
+              renderItem={(item) => (
+                <ProductPizzaItem pizza={item} key={item.id}/>
+              )}
+            />
+          }
+        </div>
+      </section>
+    </>
   );
 };
 
