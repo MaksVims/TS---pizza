@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import Logo from './Logo';
 import Button, {btnColors} from "./common/Button";
 import cartSVG from '../assets/img/svg/cart.svg';
