@@ -31,8 +31,8 @@ const ProductPage: FC = React.memo(() => {
           <Filters/>
           <h2 className="products__title title">Все пиццы</h2>
           {loading ?
-            <List items={getArray(8)} renderItem={() => (
-              <PizzaLoader/>
+            <List items={getArray(8)} renderItem={(n) => (
+              <PizzaLoader key={n}/>
             )}/>
             :
             <List

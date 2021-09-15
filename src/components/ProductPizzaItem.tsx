@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {IPizza} from "../core/store/reducers/pizzaReducer/pizza.type";
 import Button, {btnColors} from "./common/Button";
 import {ReactSVG} from "react-svg";
@@ -7,6 +7,8 @@ import classnames from 'classnames'
 import {ICartPizza} from "../core/store/reducers/cartReducer/cart.type";
 import {v4} from 'uuid'
 import {useActions} from "../core/hooks/useActions";
+import {getCountCurrentPizza} from "../core/utils/productHelper";
+import {useTypedSelector} from "../core/hooks/useTypedSelector";
 
 interface ProductPizzaItemProps {
   pizza: IPizza
@@ -16,6 +18,8 @@ const allTypes: string[] = ['тонкое', 'традиционное']
 const allSizes: number[] = [26, 30, 40]
 
 const ProductPizzaItem: FC<ProductPizzaItemProps> = React.memo(({pizza}) => {
+  const [count, setCount] = useState<number>(0)
+  const cartItems = useTypedSelector(state => state.cart.items)
   const [cartPizza, setCartPizza] = useState<ICartPizza>(
     {
       size: pizza.sizes[0],
@@ -32,6 +36,10 @@ const ProductPizzaItem: FC<ProductPizzaItemProps> = React.memo(({pizza}) => {
     cartPizza.id = v4()
     addItemToCart(cartPizza)
   }
+
+  useEffect(() => {
+    setCount(getCountCurrentPizza(cartItems, cartPizza))
+  }, [cartPizza.type, cartPizza.size, cartItems])
 
   return (
     <li className="products__grid-item">
@@ -74,6 +82,7 @@ const ProductPizzaItem: FC<ProductPizzaItemProps> = React.memo(({pizza}) => {
           <Button color={btnColors.light} classes={"product__btn"} onClick={addItem}>
             <ReactSVG src={PlusIcon} className='product__btn-svg'/>
             <span>добавить</span>
+            {count !== 0 ? <span className="product__quantity">{count}</span> : ''}
           </Button>
         </div>
       </article>
