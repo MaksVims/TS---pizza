@@ -4,7 +4,6 @@ export function getArray(number: number): number[] {
   return new Array(number).fill(0).map((_, idx) => idx + 1)
 }
 
-
 export function getCountCurrentPizza(cartItems: Map<ICartPizza, number>, currentPizza: ICartPizza): number {
   let count: number = 0
   Array.from(cartItems.keys()).forEach(pizza => {

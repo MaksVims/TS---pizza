@@ -8,6 +8,6 @@
   }
 }
 
-//@include font-face('Proxima Nova', '../assets/fonts/proxima-nova-bold', 700)
-//@include font-face('Proxima Nova', '../assets/fonts/proxima-nova-extrabold', 800)
-//@include font-face('Proxima Nova', '../assets/fonts/proxima-nova-regular', 400)
+@include font-face(Proxima Nova, '../assets/fonts/proxima-nova-bold', 700)
+@include font-face(Proxima Nova, '../assets/fonts/proxima-nova-extrabold', 800)
+@include font-face(Proxima Nova, '../assets/fonts/proxima-nova-regular', 400)
