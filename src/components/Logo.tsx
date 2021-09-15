@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import srcLogo from '../assets/img/logo-img.png';
 
-const Logo: FC = () => {
+const Logo: FC = React.memo(() => {
   return (
     <div className="logo">
       <div className="logo__img">
@@ -13,6 +13,6 @@ const Logo: FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Logo;

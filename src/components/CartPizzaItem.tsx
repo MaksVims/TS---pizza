@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useCallback} from 'react';
 import {ICartPizza} from "../core/store/reducers/cartReducer/cart.type";
 import Button, {btnColors, btnType} from "./common/Button";
 import {ReactSVG} from "react-svg";
@@ -12,12 +12,12 @@ interface CartPizzaItemProps {
   count: number
 }
 
-const CartPizzaItem: FC<CartPizzaItemProps> = ({pizza, count}) => {
+const CartPizzaItem: FC<CartPizzaItemProps> = React.memo(({pizza, count}) => {
   const {addItemToCart, awayOneItemFromCart, removeItemFromCart} = useActions()
 
-  const addPizza = () => addItemToCart(pizza)
-  const awayPizza = () => awayOneItemFromCart(pizza)
-  const removePizza = () => removeItemFromCart(pizza)
+  const addPizza = useCallback(() => addItemToCart(pizza), [pizza])
+  const awayPizza = useCallback(() => awayOneItemFromCart(pizza), [pizza])
+  const removePizza = useCallback(() => removeItemFromCart(pizza), [pizza])
 
   return (
     <li className="cart__item">
@@ -50,6 +50,6 @@ const CartPizzaItem: FC<CartPizzaItemProps> = ({pizza, count}) => {
       </article>
     </li>
   );
-};
+});
 
 export default CartPizzaItem;

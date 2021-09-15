@@ -4,7 +4,7 @@ import Button, {btnColors} from "./common/Button";
 import cartSVG from '../assets/img/svg/cart.svg';
 import {ReactSVG} from "react-svg";
 import {useTypedSelector} from '../core/hooks/useTypedSelector'
-import { getTotalItems } from '../core/utils/cartHelpers';
+import {getTotalItems} from '../core/utils/cartHelpers';
 import {useHistory} from "react-router-dom";
 
 const Navbar: FC = () => {

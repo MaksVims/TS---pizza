@@ -7,7 +7,7 @@ import {ISortCategory} from "../../core/store/reducers/filterReducer/filter.type
 import classnames from 'classnames'
 import {useActions} from "../../core/hooks/useActions";
 
-const SortPanel: FC = () => {
+const SortPanel: FC = React.memo(() => {
   const currentSort = useTypedSelector<ISortCategory>(state => state.filter.currentSort)
   const sortCategories = useTypedSelector<ISortCategory[]>(state => state.filter.sortCategories)
   const {setSortCategory} = useActions()
@@ -44,6 +44,6 @@ const SortPanel: FC = () => {
       />
     </div>
   );
-};
+});
 
 export default SortPanel;

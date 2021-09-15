@@ -24,7 +24,7 @@ interface ButtonProps {
   activeClass?: string
 }
 
-const Button: FC<ButtonProps> = (
+const Button: FC<ButtonProps> = React.memo((
   {children, color, type = btnType.default, ...props}
 ) => {
 
@@ -63,6 +63,6 @@ const Button: FC<ButtonProps> = (
       {children}
     </button>
   );
-};
+});
 
 export default Button;

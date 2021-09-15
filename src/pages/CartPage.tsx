@@ -12,7 +12,7 @@ import {getTotalItems} from "../core/utils/cartHelpers";
 import {useActions} from "../core/hooks/useActions";
 import Navbar from "../components/Navbar";
 
-const CartPage: FC = () => {
+const CartPage: FC = React.memo(() => {
   const {items: cartItems, total} = useTypedSelector(state => state.cart)
   const {clearCart} = useActions()
 
@@ -58,6 +58,6 @@ const CartPage: FC = () => {
       </section>
     </>
   );
-};
+});
 
 export default CartPage;

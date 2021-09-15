@@ -15,7 +15,7 @@ interface ProductPizzaItemProps {
 const allTypes: string[] = ['тонкое', 'традиционное']
 const allSizes: number[] = [26, 30, 40]
 
-const ProductPizzaItem: FC<ProductPizzaItemProps> = ({pizza}) => {
+const ProductPizzaItem: FC<ProductPizzaItemProps> = React.memo(({pizza}) => {
   const [cartPizza, setCartPizza] = useState<ICartPizza>(
     {
       size: pizza.sizes[0],
@@ -79,6 +79,6 @@ const ProductPizzaItem: FC<ProductPizzaItemProps> = ({pizza}) => {
       </article>
     </li>
   );
-};
+});
 
 export default ProductPizzaItem;

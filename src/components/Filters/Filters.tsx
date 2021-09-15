@@ -6,7 +6,7 @@ import {useTypedSelector} from "../../core/hooks/useTypedSelector";
 import {useActions} from "../../core/hooks/useActions";
 import SortPanel from "./SortPanel";
 
-const Filters: FC = () => {
+const Filters: FC = React.memo(() => {
   const categoryFilters = useTypedSelector<ICategoryFilter[]>(state => state.filter.filtersCategories)
   const currentFilter = useTypedSelector<string>(state => state.filter.currentFilter)
   const {setFilterCategory} = useActions()
@@ -34,6 +34,6 @@ const Filters: FC = () => {
       <SortPanel/>
     </div>
   );
-};
+});
 
 export default Filters;

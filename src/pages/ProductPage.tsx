@@ -9,7 +9,7 @@ import PizzaLoader from "../components/PizzaLoader";
 import {getArray} from '../core/utils/productHelper';
 import Navbar from "../components/Navbar";
 
-const ProductPage: FC = () => {
+const ProductPage: FC = React.memo(() => {
   const {pizzas, filteredPizzas, loading} = useTypedSelector(state => state.pizza)
   const {currentSort, currentFilter} = useTypedSelector(state => state.filter)
   const {setFilteredPizzas, fetchPizzas} = useActions()
@@ -47,6 +47,6 @@ const ProductPage: FC = () => {
       </section>
     </>
   );
-};
+});
 
 export default ProductPage;
